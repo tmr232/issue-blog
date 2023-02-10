@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://tmr232.github.io/issue-blog/'
 languageCode = 'en-us'
 title = 'Issue Blog'
 
