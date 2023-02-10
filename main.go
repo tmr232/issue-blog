@@ -75,6 +75,10 @@ func generateBlog(ownerAndRepo string, contentDir string, token string) error {
 	}
 
 	for _, issue := range issues {
+		if issue.AuthorAssociation == nil || *issue.AuthorAssociation != "COLLABORATOR" {
+			// We only show posts by collaborators.
+			continue
+		}
 		post, _ := renderPost(issue)
 		err = ioutil.WriteFile(filepath.Join(contentDir, *issue.Title+".md"), []byte(post), 0606)
 		if err != nil {
