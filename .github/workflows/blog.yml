@@ -6,6 +6,7 @@ on:
       - main  # Set a branch name to trigger deployment
   issues:
     types: [opened, edited, deleted]
+  workflow_dispatch: 
 
 jobs:
   deploy:
