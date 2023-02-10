@@ -36,6 +36,11 @@ jobs:
       - name: Generate Posts
         run: go run . --repo ${{ github.repository }} --contentDir "hugo/content/posts" --token ${{ github.token }}
 
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Hugo
+          path: hugo
+
       - name: Build
         working-directory: hugo
         run: hugo --minify
