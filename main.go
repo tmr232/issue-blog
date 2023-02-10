@@ -75,7 +75,7 @@ func generateBlog(ownerAndRepo string, contentDir string, token string) error {
 	}
 
 	for _, issue := range issues {
-		if issue.AuthorAssociation == nil || *issue.AuthorAssociation != "COLLABORATOR" {
+		if issue.AuthorAssociation == nil || (*issue.AuthorAssociation != "COLLABORATOR" && *issue.AuthorAssociation != "OWNER") {
 			// We only show posts by collaborators.
 			continue
 		}
