@@ -5,9 +5,7 @@ on:
     branches:
       - main  # Set a branch name to trigger deployment
   issues:
-    - opened
-    - edited
-    - deleted
+    types: [opened, edited, deleted]
 
 jobs:
   deploy:
