@@ -61,7 +61,7 @@ func splitName(repoName string) (owner, repo string) {
 }
 
 func generateBlog(ownerAndRepo string, contentDir string, token string) error {
-	goat.Flag("ownerAndRepo").Name("repo")
+	goat.Flag(ownerAndRepo).Name("repo")
 
 	client := newClient(token)
 
